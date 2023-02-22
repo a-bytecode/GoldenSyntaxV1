@@ -39,9 +39,7 @@ func attack(angreifer:[String: Any], opfer: inout [String: Any]) { // "inout" ma
 }
 
 
-
 func round() {
-    
     
     var rounds = 1
     
@@ -72,12 +70,12 @@ func round() {
             }
         }
         
-        // Mit () klammer muss zuerst ausgewertet werden damit der compiler es registriert. Punkt vor Strich!
+        // Mit () klammer muss zuerst ausgewertet werden damit der Compiler es registriert. Punkt vor Strich!
         allHeroesDead = (heldenList[0]["HP"] as! Int) <= 0 && (heldenList[1]["HP"] as! Int) <= 0
         
         enemyAreDead = (gegnerList[0]["HP"] as! Int) <= 0 && (gegnerList[1]["HP"] as! Int) <= 0
         
-        if allHeroesDead && enemyAreDead { // Fälle wie Unentschieden immer noch Oben setzten um alle Fälle abzudecken! Da die Bedingung in eiiner falschen Konstellation sonst nicht erreicht werden könnte.
+        if allHeroesDead && enemyAreDead { // Fälle wie Unentschieden immer noch Oben setzten um alle Fälle abzudecken! Da die Bedingung in einer falschen Konstellation sonst nicht erreicht werden könnte.
             print("\nUnentschieden!\n")
         } else if allHeroesDead {
             print("\nGame is over: Gegner gewinnt!\n")
